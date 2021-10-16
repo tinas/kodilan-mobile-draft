@@ -1,0 +1,14 @@
+com/kodilanmobile/ReactNativeFlipper.java
+ com.kodilanmobile.ReactNativeFlipper
+ com.kodilanmobile.ReactNativeFlipper$1
+ com.kodilanmobile.ReactNativeFlipper$2
+ com.kodilanmobile.ReactNativeFlipper$2$1
+com/kodilanmobile/MainActivity.java
+ com.kodilanmobile.MainActivity
+com/kodilanmobile/MainApplication.java
+ com.kodilanmobile.MainApplication
+ com.kodilanmobile.MainApplication$1
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
+com/kodilanmobile/BuildConfig.java
+ com.kodilanmobile.BuildConfig
