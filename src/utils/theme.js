@@ -11,6 +11,8 @@ const colors = {
   white: '#FFFFFF',
   green: '#26AE61',
   blue: '#186FC9',
+  orange:'#F1630D',
+  yellow:'#DFB634',
   icon: '#5C5C5C',
   background: '#F8F8F8',
   disable: '#777777'

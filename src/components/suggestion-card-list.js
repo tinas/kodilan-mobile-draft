@@ -5,12 +5,10 @@ import Box from './box'
 import Label from './label'
 import SuggestionCard from './suggestion-card'
 
-import theme from '../utils/theme'
-
 const SuggestionCardList = ({ suggestions, ...props }) => {
   return (
     <Box {...props}>
-      <Label ml={16} fontSize={24} fontWeight={700} color={theme.colors.icon}>
+      <Label ml={16} fontSize={24} fontWeight={700} color="icon">
         Öne çıkan ilanlar
       </Label>
       <FlatList

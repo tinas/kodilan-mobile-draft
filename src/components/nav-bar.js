@@ -7,9 +7,9 @@ import { Megaphone, Info } from './icons'
 
 import theme from '../utils/theme'
 
-const NavBar = () => {
+const NavBar = ({...props}) => {
   return (
-    <Box bg="background">
+    <Box bg="background" {...props}>
       <Box px={16} flexDirection="row" justifyContent="space-between">
         <Logo fontSize={32} />
         <Box flexDirection="row">
