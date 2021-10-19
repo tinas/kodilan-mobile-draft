@@ -1,11 +1,14 @@
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 import Button from './button'
 import Label from './label'
 
 import theme from '../utils/theme'
 
-const PositionTag = ({ type, navigation, ...props }) => {
+const PositionTag = ({ type, ...props }) => {
+  const navigation = useNavigation()
+
   return (
     <Button
       width={80}

@@ -1,20 +1,30 @@
 import React from 'react'
-import { Image } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
 import Box from '../components/box'
 import Button from '../components/button'
 import Label from '../components/label'
+import CompanyImage from './company-image'
+
 import { Management, Map } from '../components/icons'
 
 import theme from '../utils/theme'
 
 const SuggestionCard = ({ item, ...props }) => {
+  const navigation = useNavigation()
+  const onPressButton = () => {
+    navigation.push('Detail')
+  }
+
   return (
     <Box mt={8} width={210} height={140} backgroundColor="white" borderRadius={8} p={10} {...props}>
       <Box flexDirection="row" alignItems="center">
-        <Image
+        <CompanyImage
           style={{ width: 50, height: 50, resizeMode: 'contain' }}
-          source={require('../assets/empty-company-logo.png')}
+          uri={item.company.logo}
+          width={50}
+          height={50}
+          company_slug={item.company.slug}
         />
         <Box ml={10}>
           <Box flexDirection="row" alignItems="center">
@@ -34,7 +44,7 @@ const SuggestionCard = ({ item, ...props }) => {
       <Label mt={6} fontSize={12} color="title">
         {item.position.length > 60 ? item.position.substr(0, 55) + '...' : item.position}
       </Label>
-      <Button mt="auto" width="100%" height={25} backgroundColor="green" borderRadius={4}>
+      <Button onPress={onPressButton} mt="auto" width="100%" height={25} backgroundColor="green" borderRadius={4}>
         <Label color="white">İlana git</Label>
       </Button>
     </Box>

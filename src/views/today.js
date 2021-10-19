@@ -1,31 +1,14 @@
 import React from 'react'
-import { FlatList } from 'react-native'
 
-import NavBar from '../components/nav-bar'
 import Box from '../components/box'
-import Label from '../components/label'
-import JobItemCard from '../components/job-item-card'
+import JobItemCardList from '../components/job-item-card-list'
 
-const { MonthlyData } = require('../../mock')
+import { PERIODS } from '../utils/constants'
 
-const TodayPostsView = ({ navigation }) => {
+const TodayPostsView = () => {
   return (
     <Box bg="background" flex={1}>
-      <FlatList
-        ListHeaderComponent={() => (
-          <Box>
-            <NavBar mb={24} />
-            <Label mx={16} fontSize={24} fontWeight={700} color="icon">
-              Son Eklenen ilanlar
-            </Label>
-          </Box>
-        )}
-        data={MonthlyData.data}
-        renderItem={({ item }) => <JobItemCard item={item} navigation={navigation} />}
-        keyExtractor={(item) => item.slug}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingBottom: 50 }}
-      />
+      <JobItemCardList period={PERIODS.daily} />
     </Box>
   )
 }

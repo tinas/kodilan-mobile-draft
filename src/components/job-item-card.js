@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 import Box from './box'
 import Button from './button'
@@ -9,20 +10,23 @@ import CompanyImage from './company-image'
 import { Management, Map } from './icons'
 
 import theme from '../utils/theme'
+import { formatDistanceToNowDate } from '../utils/date'
 
-const JobItemCard = ({ item, navigation, ...props }) => {
+const JobItemCard = ({ item, ...props }) => {
+  const navigation = useNavigation()
+
   return (
     <Button
       flexDirection="column"
       justifyContent="flex-start"
       alignItems="flex-start"
-      mt={8}
+      mt={10}
       p={10}
       mx={10}
       backgroundColor="white"
       borderRadius={8}
       {...props}
-      onPress={() => navigation.navigate('Detail')}
+      onPress={() => navigation.push('Detail')}
     >
       <Box flexDirection="row" justifyContent="space-between">
         <Box flex={1} flexDirection="row" alignItems="center">
@@ -52,9 +56,9 @@ const JobItemCard = ({ item, navigation, ...props }) => {
           </Box>
         </Box>
         <Box alignItems="flex-end" mt={2} ml={90}>
-          <PositionTag type={item.type} navigation={navigation} />
+          <PositionTag type={item.type} />
           <Label fontSize={8} color="placeholder" mt={6}>
-            7 saat önce
+            {formatDistanceToNowDate(item.updated_at)}
           </Label>
         </Box>
       </Box>
@@ -64,7 +68,7 @@ const JobItemCard = ({ item, navigation, ...props }) => {
       {item.tags.length > 0 && (
         <Box flexDirection="row" flexWrap="wrap" mt={16} mb={-8}>
           {item.tags.map((t, index) => (
-            <Tag item={t} mr={8} key={index} navigation={navigation} />
+            <Tag item={t} mr={8} key={index} />
           ))}
         </Box>
       )}

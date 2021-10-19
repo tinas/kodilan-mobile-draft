@@ -1,9 +1,12 @@
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 import Button from './button'
 import Label from './label'
 
-const Tag = ({ item, navigation, ...props }) => {
+const Tag = ({ item, ...props }) => {
+  const navigation = useNavigation()
+
   return (
     <Button
       px={8}

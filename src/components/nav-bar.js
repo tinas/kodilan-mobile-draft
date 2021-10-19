@@ -7,10 +7,10 @@ import { Megaphone, Info } from './icons'
 
 import theme from '../utils/theme'
 
-const NavBar = ({...props}) => {
+const NavBar = ({ ...props }) => {
   return (
-    <Box bg="background" {...props}>
-      <Box px={16} flexDirection="row" justifyContent="space-between">
+    <Box bg="background" {...props} borderBottomWidth={0.2} borderBottomColor="rgba(153, 153, 153, .5)">
+      <Box px={16} pb={8} flexDirection="row" justifyContent="space-between">
         <Logo fontSize={32} />
         <Box flexDirection="row">
           <Button>
