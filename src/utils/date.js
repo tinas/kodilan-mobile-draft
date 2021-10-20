@@ -1,4 +1,4 @@
-import { distanceInWordsToNow } from 'date-fns'
+import { distanceInWordsToNow, format } from 'date-fns'
 
 const locale = require('date-fns/locale/tr')
 
@@ -9,9 +9,5 @@ export const formatDistanceToNowDate = (date) => {
 }
 
 export const formatLocaleDate = (date) => {
-  return new Date(date).toLocaleDateString('tr-TR', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric'
-  })
+  return format(date, 'd MMMM YYYY', { locale })
 }

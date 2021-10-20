@@ -13,7 +13,7 @@ import theme from '../utils/theme'
 const SuggestionCard = ({ item, ...props }) => {
   const navigation = useNavigation()
   const onPressButton = () => {
-    navigation.push('Detail')
+    navigation.push('Detail', { item })
   }
 
   return (

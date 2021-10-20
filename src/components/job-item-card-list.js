@@ -150,8 +150,8 @@ const JobItemCardList = ({ period }) => {
               onEndReached={loadMore}
               onEndReachedThreshold={2}
               initialNumToRender={10}
-              maxToRenderPerBatch={8}
-              windowSize={8}
+              maxToRenderPerBatch={10}
+              windowSize={10}
               ListFooterComponent={() => (
                 <Box my={32} justifyContent="center" alignItems="center">
                   {lastPage != currentPage ? (

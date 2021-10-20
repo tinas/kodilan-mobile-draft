@@ -26,7 +26,7 @@ const JobItemCard = ({ item, ...props }) => {
       backgroundColor="white"
       borderRadius={8}
       {...props}
-      onPress={() => navigation.push('Detail')}
+      onPress={() => navigation.push('Detail', { item })}
     >
       <Box flexDirection="row" justifyContent="space-between">
         <Box flex={1} flexDirection="row" alignItems="center">
