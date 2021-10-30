@@ -59,7 +59,7 @@ const TabStack = () => {
             },
             headerLeft: () => (
               <Button px={20} height="100%" onPress={() => navigation.goBack()}>
-                <ChevronLeft width={24} height={24} color={theme.colors.icon} />
+                <ChevronLeft width={32} height={32} color={theme.colors.icon} />
               </Button>
             )
           }

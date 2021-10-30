@@ -24,7 +24,8 @@ const SuggestionCard = ({ item, ...props }) => {
           uri={item.company.logo}
           width={50}
           height={50}
-          company_slug={item.company.slug}
+          companyName={item.company.name}
+          companySlug={item.company.slug}
         />
         <Box ml={10}>
           <Box flexDirection="row" alignItems="center">
@@ -41,7 +42,7 @@ const SuggestionCard = ({ item, ...props }) => {
           </Box>
         </Box>
       </Box>
-      <Label mt={6} fontSize={12} color="title">
+      <Label mt={6} fontSize={12} color="primaryText">
         {item.position.length > 60 ? item.position.substr(0, 55) + '...' : item.position}
       </Label>
       <Button onPress={onPressButton} mt="auto" width="100%" height={25} backgroundColor="green" borderRadius={4}>

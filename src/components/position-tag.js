@@ -4,10 +4,16 @@ import { useNavigation } from '@react-navigation/native'
 import Button from './button'
 import Label from './label'
 
-import theme from '../utils/theme'
+import { TYPES, QUERY_TYPE } from '../utils/constants'
 
-const PositionTag = ({ type, ...props }) => {
+const PositionTag = ({ type, touchable = false, ...props }) => {
   const navigation = useNavigation()
+
+  const handlePress = () => {
+    if (!touchable) return
+
+    navigation.navigate('SearchResult', { query: type, type: QUERY_TYPE.POSITION_TAG })
+  }
 
   return (
     <Button
@@ -16,58 +22,15 @@ const PositionTag = ({ type, ...props }) => {
       pb={3}
       border={1}
       borderRadius={3}
-      style={[types[type].containerStyle]}
+      style={[TYPES[type].containerStyle]}
       {...props}
-      onPress={() => navigation.navigate('SearchResult')}
+      onPress={handlePress}
     >
-      <Label fontSize={10} style={[types[type].textStyle]}>
-        {types[type].name}
+      <Label fontSize={10} style={[TYPES[type].textStyle]}>
+        {TYPES[type].name}
       </Label>
     </Button>
   )
-}
-
-const types = {
-  1: {
-    name: 'Tam zamanlı',
-    containerStyle: {
-      borderColor: theme.colors.blue,
-      backgroundColor: '#F1F7FC'
-    },
-    textStyle: {
-      color: theme.colors.blue
-    }
-  },
-  2: {
-    name: 'Yarı zamanlı',
-    containerStyle: {
-      borderColor: theme.colors.orange,
-      backgroundColor: '#FEF6F0'
-    },
-    textStyle: {
-      color: theme.colors.orange
-    }
-  },
-  3: {
-    name: 'Stajyer',
-    containerStyle: {
-      borderColor: theme.colors.yellow,
-      backgroundColor: '#FDFCF2'
-    },
-    textStyle: {
-      color: theme.colors.yellow
-    }
-  },
-  4: {
-    name: 'Freelance',
-    containerStyle: {
-      borderColor: theme.colors.yellow,
-      backgroundColor: '#FDFCF2'
-    },
-    textStyle: {
-      color: theme.colors.yellow
-    }
-  }
 }
 
 export default PositionTag

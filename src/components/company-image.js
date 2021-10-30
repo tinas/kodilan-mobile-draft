@@ -8,9 +8,11 @@ import Button from './button'
 
 import { getSvgData } from '../services/company-image-service'
 
+import { QUERY_TYPE } from '../utils/constants'
+
 const emptyCompanyLogo = 'https://kodilan.com/img/empty-company-logo.8437254b.png'
 
-const CompanyImage = ({ uri, width, height, style, company_slug }) => {
+const CompanyImage = ({ uri, width, height, style, companyName, companySlug, touchable = false }) => {
   const [svg, setSvg] = React.useState()
   const [image, setImage] = React.useState(emptyCompanyLogo)
 
@@ -32,12 +34,18 @@ const CompanyImage = ({ uri, width, height, style, company_slug }) => {
   }
 
   const navigation = useNavigation()
-  const onPressImage = () => {
-    navigation.push('SearchResult')
+
+  const handlePress = () => {
+    if (!touchable) return
+
+    navigation.navigate('SearchResult', {
+      company: { name: companyName, slug: companySlug },
+      type: QUERY_TYPE.COMPANY
+    })
   }
 
   return (
-    <Button onPress={onPressImage}>
+    <Button onPress={handlePress}>
       {uri.includes('.svg') && svg ? (
         <SvgXml style={style} width={width} height={height} xml={svg} />
       ) : (

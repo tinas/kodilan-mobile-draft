@@ -6,14 +6,14 @@ import NavBar from '../components/nav-bar'
 import Box from './box'
 import Label from '../components/label'
 import JobItemCard from '../components/job-item-card'
-import Loader from '../components/Loader'
+import Loader from '../components/loader'
 import EmptyPost from '../components/empty-post'
 
 import { fetchRecentPosts, fetchFeaturedPosts, fetchAllPosts } from '../services/post-service'
 
 import { PERIODS } from '../utils/constants'
 
-const NAVBAR_HEIGHT = 60
+const NAVBAR_HEIGHT = 70
 
 const JobItemCardList = ({ period }) => {
   const ref = React.useRef(null)

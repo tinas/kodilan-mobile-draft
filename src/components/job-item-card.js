@@ -35,7 +35,8 @@ const JobItemCard = ({ item, ...props }) => {
             uri={item.company.logo}
             width={50}
             height={50}
-            company_slug={item.company.slug}
+            companyName={item.company.name}
+            companySlug={item.company.slug}
           />
 
           <Box ml={10}>
@@ -62,7 +63,7 @@ const JobItemCard = ({ item, ...props }) => {
           </Label>
         </Box>
       </Box>
-      <Label mt={16} fontSize={12} color="title" numberOfLines={2} ellipsizeMode="tail">
+      <Label mt={16} fontSize={12} color="primaryText" numberOfLines={2} ellipsizeMode="tail">
         {item.position}
       </Label>
       {item.tags.length > 0 && (

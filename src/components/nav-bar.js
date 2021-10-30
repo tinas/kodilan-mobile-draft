@@ -8,7 +8,7 @@ import Box from './box'
 import Label from './label'
 import Button from './button'
 import Logo from './logo'
-import { Megaphone, Info } from './icons'
+import { Megaphone, Info, Github } from './icons'
 
 import theme from '../utils/theme'
 
@@ -17,7 +17,7 @@ const actionSheetRef = React.createRef()
 const NavBar = ({ ...props }) => {
   return (
     <Box bg="background" {...props} borderBottomWidth={0.2} borderBottomColor="rgba(153, 153, 153, .5)">
-      <Box px={16} pb={8} flexDirection="row" justifyContent="space-between">
+      <Box px={16} py={8} flexDirection="row" justifyContent="space-between">
         <Logo fontSize={32} />
         <Box flexDirection="row">
           <Button>
@@ -44,19 +44,20 @@ const NavBar = ({ ...props }) => {
           </Label>
           <Button
             width="100%"
+            height={52}
             mt={8}
             py={8}
             px={26}
             borderRadius={8}
             backgroundColor="green"
             onPress={() => {
-              Linking.openURL('https://kodilan.com/').catch((err) => {
+              Linking.openURL('https://github.com/kodilan-com').catch((err) => {
                 console.error('Failed opening page because: ', err)
                 alert('Failed to open page')
               })
             }}
           >
-            <Image style={{ width: 32, height: 32 }} source={require('../assets/github.png')} />
+            <Github width={24} height={24} stroke={theme.colors.white} />
             <Label ml={16} fontSize={16} color="white" fontWeight="700">
               kodilan-com
             </Label>

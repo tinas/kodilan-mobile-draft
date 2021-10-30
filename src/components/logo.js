@@ -10,13 +10,13 @@ const Logo = ({ ...props }) => {
         <Label color="green" fontSize={24} {...props}>
           {'{'}
         </Label>
-        <Label color="title" fontSize={24} {...props}>
+        <Label color="primaryText" fontSize={24} {...props}>
           {' kod'}
         </Label>
         <Label color="green" fontSize={24} {...props}>
           ,
         </Label>
-        <Label color="title" fontSize={24} {...props}>
+        <Label color="primaryText" fontSize={24} {...props}>
           {' ilan '}
         </Label>
         <Label color="green" fontSize={24} {...props}>

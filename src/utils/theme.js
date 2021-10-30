@@ -6,7 +6,7 @@ const radii = {
 }
 
 const colors = {
-  title: '#333333',
+  primaryText: '#333333',
   placeholder: '#999999',
   white: '#FFFFFF',
   green: '#26AE61',

@@ -15,11 +15,16 @@ function TabBar({ state, descriptors, navigation }) {
       pb={Platform.OS == 'ios' && 20}
       bg="white"
       flexDirection="row"
+      paddingHorizontal={16}
       style={{
         shadowColor: '#000',
-        shadowOpacity: 0.1,
-        shadowRadius: 20,
-        paddingHorizontal: 16
+        shadowOffset: {
+          width: 0,
+          height: 12
+        },
+        shadowOpacity: 0.37,
+        shadowRadius: 7.49,
+        elevation: 24
       }}
     >
       {state.routes.map((route, index) => {

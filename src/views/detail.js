@@ -41,7 +41,7 @@ const DetailView = ({ route }) => {
         showsVerticalScrollIndicator={false}
       >
         <Box flexDirection="row" mt={10}>
-          <PositionTag type={post.type} />
+          <PositionTag type={post.type} touchable={true} />
           <Box flexDirection="row" ml="auto">
             <Label fontSize={10} color="placeholder">
               Son güncelleme:
@@ -51,7 +51,7 @@ const DetailView = ({ route }) => {
             </Label>
           </Box>
         </Box>
-        <Label mt={16} fontSize={20} fontWeight="700" color="title">
+        <Label mt={16} fontSize={20} fontWeight="700" color="primaryText">
           {post.position}
         </Label>
         <Box flexDirection="row" alignItems="center" mt={24}>
@@ -60,7 +60,9 @@ const DetailView = ({ route }) => {
             uri={post.company.logo}
             width={70}
             height={70}
-            company_slug={post.company.slug}
+            companyName={post.company.name}
+            companySlug={post.company.slug}
+            touchable={true}
           />
           <Box ml={10}>
             <Box flexDirection="row" mt={-4}>
@@ -111,7 +113,7 @@ const DetailView = ({ route }) => {
               </Label>
               <Box flexDirection="row" flexWrap="wrap" mt={8} mb={-8}>
                 {post.tags.map((item) => (
-                  <Tag item={item} key={item.slug} mr={8} />
+                  <Tag item={item} key={item.slug} mr={8} touchable={true} />
                 ))}
               </Box>
             </Box>

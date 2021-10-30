@@ -20,3 +20,27 @@ export const fetchAllPosts = async (page = 1) => {
 
   return request
 }
+
+export const search = async (query) => {
+  const request = axios.get(`/search?query=${query}`)
+
+  return request
+}
+
+export const fetchByTag = async (tag) => {
+  const request = axios.get(`/tags/${tag}/posts`)
+
+  return request
+}
+
+export const fetchByCompany = async (company) => {
+  const request = axios.get(`/companies/${company}/posts`)
+
+  return request
+}
+
+export const fetchByPosition = async (positionTypeNumber) => {
+  const request = axios.get(`/search?type=${positionTypeNumber}`)
+
+  return request
+}
